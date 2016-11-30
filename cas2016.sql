@@ -152,11 +152,10 @@ CREATE TABLE IF NOT EXISTS `tb_user` (
 
 --
 -- テーブルのデータのダンプ `tb_user`
--- urole: 1 - 学生、　2- 教員, 3-教員
+-- urole: 1 - 学生、　2- 教員, 3-教員(管理者)
 --
 
 INSERT INTO `tb_user` (`uid`, `uname`, `upass`, `urole`) VALUES
-('admin', '管理者', '1234', 9),
 ('joho1', '教員担当者', '1234', 3),
 ('joho2', '教員一般', '1234', 2),
 ('k16jk201', '入江 隆司', 'abcd', 1),
