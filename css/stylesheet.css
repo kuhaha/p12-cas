@@ -1,0 +1,43 @@
+<style>
+table.sample {
+	border: 1px solid #FDFEFE;
+	border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: show;
+}
+
+.sample th {
+	border-top: solid 1px #8DB9DB;
+	border-left: solid 1px #8DB9DB;
+	border-right: solid 1px #8DB9DB;
+	border-bottom: solid 1px #8DB9DB;
+	background-color: #85B5D9;
+	color: #FFFFFF;
+	padding: 0.3em 1em;
+	white-space: nowrap;
+	text-align: center;
+	font-weight: bold;
+}
+
+.sample td {
+	border-top: solid 1px #8DB9DB;
+	border-left: solid 1px #8DB9DB;
+	border-right: solid 1px #8DB9DB;
+	border-bottom: solid 1px #8DB9DB;
+	padding: 0.3em 1em;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.sample td.header {
+	background-color: #E1EFFB;
+	color: #2E6E9E;
+	font-weight: bold;
+}
+
+.ui-datepicker-trigger {
+	width: 30px;
+	height: 30px;
+	margin: 0 0 0 10px;
+}
+</style>

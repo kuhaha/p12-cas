@@ -1,0 +1,25 @@
+#countdown{
+	text-align:center;
+	font-size:48px;
+	margin-bottom:24px;
+}
+
+#countdown span{
+	color:#FF0000;
+}
+
+#countdownDate{
+	text-align:center;
+	font-size:18px;
+	margin-bottom:24px;
+}
+
+.inner{
+	width:300px;
+	height:50px;
+	}
+
+#contents{
+	width:300px;
+	height:100px;
+}
