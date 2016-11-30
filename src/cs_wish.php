@@ -31,9 +31,7 @@ if($row){
 	$my_halfgpa = $row['halfgpa'];
 
 }	
-/**
-* 要件
-*/
+
 $sql = "SELECT * FROM tb_course where cid=2";
 $rs = mysql_query($sql, $conn);
 $row = mysql_fetch_array($rs) ;
@@ -42,7 +40,7 @@ $min_credit	= $row['min_credit'];
 $min_gpa		= $row['min_gpa'];
 
 $cid = 1;         //希望のコースID;
-$node = '';
+$note = '';
 $act = 'insert';  //初回登録?（insert: 初回登録; update: 再登録）;
 //コース決定済みでないかチェック
 $sql = "select * from tb_entry where sid='$sid'";
@@ -56,8 +54,6 @@ if($row){
 }
 ?>
 
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <style>
   .container-canvas {
@@ -69,10 +65,10 @@ if($row){
 <h2 class="bg-info">総合コース登録要件チェック</h2>
 <div class="container-fluid">
   <div class="form-group">
-		<label class="control-label col-sm-2" for="gp"></label>
-		<div class="container-canvas col-sm-4 col-md-2 text-left">
+		<label class="control-label col-sm-1" for="gp"></label>
+		<div class="container-canvas col-xs-6 col-sm-5 col-md-2">
     	<canvas id="myChart1" width="10" height="10"></canvas></div>
-		<div class="container-canvas col-sm-4 col-md-2 text-left">
+		<div class="container-canvas col-xs-6 col-sm-5 col-md-2">
   	  <canvas id="myChart2" width="10" height="10"></canvas></div>
   </div>
 </div>
@@ -81,13 +77,11 @@ if($row){
 
 var gp = {
 	title:  "総合コース登録要件（修得単位数）",
-	lable: "",
 	labels: ["必要な単位数", "あなたの単位数"],
 	data : [38, <?=$my_halfgp ?>]
 };
 var gpa = {
 	title:  "総合コース登録要件（GPA）",
-	lable: "",
 	labels: ["必要なGPA", "あなたのGPA"],
 	data : [2.0, <?=$my_halfgpa ?>]
 };
@@ -98,7 +92,6 @@ var graph　= function (options){
     data: {
       labels: options.labels,
       datasets: [{
-        label: options.label,
         data: options.data,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
@@ -113,6 +106,9 @@ var graph　= function (options){
     },
     options:  {
 		  scales: {
+        xAxes: [{
+          barThickness : 80,  
+        }],
 		    yAxes: [{
 		      ticks: {
 		        beginAtZero:true
